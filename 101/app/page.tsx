@@ -10,6 +10,7 @@ export default function Home() {
             className="absolute top-[38%] left-[25%] text-center font-bold text-[1.5rem]"
             style={{
               lineHeight: "1.3rem",
+              color: "white",
             }}
           >
             Frontend <br />
