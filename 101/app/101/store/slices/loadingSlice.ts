@@ -1,19 +1,19 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const counterSlice = createSlice({
-  name: "counter",
+const loadingSlice = createSlice({
+  name: "loading",
   initialState: {
-    value: 0,
+    isLoading: false,
   },
   reducers: {
-    increment: (state) => {
-      state.value += 1;
+    startLoading: (state) => {
+      state.isLoading = true;
     },
-    decrement: (state) => {
-      state.value -= 1;
+    endLoading: (state) => {
+      state.isLoading = false;
     },
   },
 });
 
-export const { increment, decrement } = counterSlice.actions;
-export default counterSlice.reducer;
+export const { startLoading, endLoading } = loadingSlice.actions;
+export default loadingSlice.reducer;
