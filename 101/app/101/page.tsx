@@ -1,9 +1,15 @@
-export const Home = () => {
+"use client";
+import { useSelector, useDispatch } from "react-redux";
+import { increment } from "./store/slices/loadingSlice";
+
+export default function Counter() {
+  const count = useSelector((state) => (state as any).counter.value);
+  const dispatch = useDispatch();
+
   return (
-    <>
-      <div>home</div>
-      <p>배운것들을 차곡 정리하는 시간</p>
-    </>
+    <div>
+      <span>{count}</span>
+      <button onClick={() => dispatch(increment())}>증가</button>
+    </div>
   );
-};
-export default Home;
+}
